@@ -1,5 +1,83 @@
+
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Bus sprinter = new Bus("Mersedes-BENZ","Sprinter",250,3.0f);
+        System.out.println(sprinter);
+        sprinter.start();
+        sprinter.stop();
+        sprinter.maxSpeedIs();
+        System.out.println();
+        Bus kursor = new Bus("LIAZ","Kursor",220,1.6f);
+        System.out.println(kursor);
+        kursor.start();
+        kursor.stop();
+        kursor.bestLapTime();
+        System.out.println();
+        Bus mezdogorodets = new Bus("MAZ","Mezdugorodets",210,2.5f);
+        System.out.println(mezdogorodets);
+        mezdogorodets.start();
+        mezdogorodets.stop();
+        System.out.println();
+        mezdogorodets.bestLapTime();
+        Bus lionCity = new Bus("MAN","Lion city",198,4.1f);
+        lionCity.start();
+        lionCity.stop();
+        lionCity.pitStop();
+        lionCity.bestLapTime();
+        System.out.println();
+        Lorry abc = new Lorry("AAA","abc",130,4.1f);
+        System.out.println(abc);
+        abc.pitStop();
+        abc.start();
+        abc.stop();
+        System.out.println();
+        Lorry cba = new Lorry("BBB","cba",150,2.1f);
+        System.out.println(cba);
+        cba.start();
+        cba.stop();
+        System.out.println();
+        Lorry bca = new Lorry("CCC","bca",170,3.1f);
+        System.out.println(bca);
+        bca.start();
+        bca.stop();
+        System.out.println();
+        Lorry cab = new Lorry("DDD","cab",195,4.1f);
+        System.out.println(cab);
+        cab.start();
+        cab.stop();
+        System.out.println();
+        PassengerCar lada = new PassengerCar("Lada", "Niva", 202,2.2f);
+        System.out.println(lada);
+        lada.start();
+        lada.stop();
+        System.out.println();
+        PassengerCar bmw = new PassengerCar("BMW", "X5", 225,2.5f);
+        System.out.println(bmw);
+        PassengerCar reno = new PassengerCar("Reno", "Duster", 201,4.2f);
+        System.out.println(reno);
+        PassengerCar daewoo = new PassengerCar("Daewoo", "Nexia", 209,4.2f);
+        System.out.println(daewoo);
+        daewoo.pitStop();
+        System.out.println();
+
+        Driver<Bus> roma = new Driver<>("Рома", 6, 'D');
+        roma.start(sprinter);
+        roma.refuel(sprinter);
+        roma.stop(sprinter);
+        System.out.println(roma);
+        Driver<Lorry> vania = new Driver<>("Ваня", 3, 'C');
+        vania.competition(cab);
+        Driver<PassengerCar> ura = new Driver<>("Юра", 10, 'B');
+        ura.competition(reno);
+
+
+
+
+
+
+
+
+
     }
 }
