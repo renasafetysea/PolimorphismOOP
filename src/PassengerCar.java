@@ -1,7 +1,15 @@
 public class PassengerCar extends Car implements Competitor {
 
-        public PassengerCar(String brand, String model,int maxSpeed, Float engineVolume) {
+    public Tipe tipe;
+
+
+    public PassengerCar(String brand, String model, int maxSpeed, Float engineVolume, Tipe tipe) {
         super(brand, model, maxSpeed, engineVolume);
+        this.tipe = tipe;
+    }
+
+    public Tipe getTipe() {
+        return tipe;
     }
 
     @Override
@@ -31,5 +39,18 @@ public class PassengerCar extends Car implements Competitor {
 
     }
 
-}
+    @Override
+    public void printInfo() {
+        if (tipe == null) {
+            System.out.println("Тип не указан");
+        } else {
+            System.out.println("Тип кузова -  " + tipe.getStringTipe());
+        }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Тип кузова - " +getModel() +" - " + tipe;
+    }
+}

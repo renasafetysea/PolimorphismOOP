@@ -1,8 +1,14 @@
 public class Lorry extends  Car implements Competitor{
 
-        public Lorry(String brand, String model,int maxSpeed, Float engineVolume) {
+
+    private Weight weight;
+
+    public Lorry(String brand, String model, int maxSpeed, Float engineVolume, Weight weight) {
         super(brand, model, maxSpeed, engineVolume);
+        this.weight = weight;
     }
+
+
 
     @Override
     public void start() {
@@ -32,8 +38,29 @@ public class Lorry extends  Car implements Competitor{
 
     }
 
+    @Override
+    public void printInfo() {
+        if (weight == null) {
+            System.out.println("Тип не указан");
+        } else {
+            System.out.println("Грузоподьемность -  " + weight.getStringWeight());
+        }
 
+    }
+
+    public Weight getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        return "ГрузоподЪемность - " + getModel() + weight;
+    }
 }
+
+
+
+
 
 
 

@@ -1,11 +1,18 @@
+import java.util.Arrays;
 
-public class Bus extends Car implements Competitor{
+public class Bus extends Car implements Competitor {
 
 
 
-    public Bus(String brand, String model, int maxSpeed, Float engineVolume) {
+    private Capacity capacity;
 
-        super(brand, model,maxSpeed, engineVolume);
+    public Bus(String brand, String model, int maxSpeed, Float engineVolume, Capacity capacity) {
+        super(brand, model, maxSpeed, engineVolume);
+        setCapacity(capacity);
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     @Override
@@ -36,5 +43,20 @@ public class Bus extends Car implements Competitor{
 
     }
 
+    @Override
+    public String toString() {
+        return "Вместимость автобуса - " + getModel() + capacity;
+    }
 
+    @Override
+    public void printInfo() {
+        if (capacity == null) {
+            System.out.println("Тип не указан");
+        } else {
+            System.out.println("Вместимость " + capacity.getStringCapacity());
+        }
+
+    }
 }
+
+

@@ -1,5 +1,5 @@
 
-    abstract class Transport {
+   public class Transport  {
         private final String brand;
         private final String model;
 

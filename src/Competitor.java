@@ -4,5 +4,5 @@ public interface Competitor {
     public void bestLapTime();
     public void maxSpeedIs();
 
-
+    public void printInfo();
 }
