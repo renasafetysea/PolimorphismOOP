@@ -1,4 +1,4 @@
-
+import static Verification.Data.verification;
 public class Main {
 
     public static void main(String[] args) {
@@ -75,6 +75,13 @@ public class Main {
         sprinter.printInfo();
         daewoo.printInfo();
         cab.printInfo();
+        System.out.println(verification("ivan","123qwe","123qwe"));
+        System.out.println(verification("Ivan","L0256dfg","L0256dfh"));
+
+
+
+
+
 
 
 
