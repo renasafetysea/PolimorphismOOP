@@ -48,6 +48,11 @@ public class Lorry extends  Car implements Competitor{
 
     }
 
+    @Override
+    public boolean diagnostics() {
+        return Math.random() > 0.75;
+    }
+
     public Weight getWeight() {
         return weight;
     }

@@ -4,8 +4,8 @@ public class Data {
     public static boolean verification(String login, String password, String confirmPassword) {
         try {
             return (loginVerifity(login) && passwordVerifity(password, confirmPassword));
-        }catch (WrongLoginException | WrongPasswordException exam){
-            System.out.println(exam.getMessage());
+        }catch (WrongLoginException | WrongPasswordException e){
+            System.out.println(e.getMessage());
             return false;
         }
     }

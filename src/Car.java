@@ -1,5 +1,5 @@
 
-    public class Car extends Transport {
+    public abstract class Car extends Transport {
         private Float engineVolume;
 
         public Car(String brand, String model,int maxSpeed, Float engineVolume ) {
@@ -34,4 +34,5 @@
         }
 
 
+        public abstract boolean diagnostics();
     }

@@ -40,6 +40,11 @@ public class PassengerCar extends Car implements Competitor {
     }
 
     @Override
+    public boolean diagnostics() {
+        return Math.random() > 0.7;
+    }
+
+    @Override
     public void printInfo() {
         if (tipe == null) {
             System.out.println("Тип не указан");
@@ -48,6 +53,7 @@ public class PassengerCar extends Car implements Competitor {
         }
 
     }
+
 
     @Override
     public String toString() {

@@ -3,13 +3,13 @@
     public class Driver <D extends Car & Competitor> {
         private String name;
         private Integer experience;
-        private char lisenseDriver;
+        private String lisenseDriver;
 
 
-        public Driver(String name, Integer experience, char lisenseDriver) {
+        public Driver(String name, Integer experience, String lisenseDriver) {
             this.name = name;
             this.experience = experience;
-            this.lisenseDriver = lisenseDriver;
+            setLisenseDriver(lisenseDriver);
         }
 
 
@@ -48,12 +48,14 @@
             this.experience = experience;
         }
 
-        public char getLisenseDriver() {
+        public String getLisenseDriver() {
             return lisenseDriver;
         }
 
-        public void setLisenseDriver(char lisenseDriver) {
-
+        public void setLisenseDriver(String lisenseDriver) {
+            if(lisenseDriver == null) {
+                throw new IllegalArgumentException("Необоходимо указать категорию прав!");
+            }
             this.lisenseDriver = lisenseDriver;
         }
 

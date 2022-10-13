@@ -1,5 +1,5 @@
 
-   public class Transport  {
+   public abstract class Transport  {
         private final String brand;
         private final String model;
 
@@ -32,8 +32,11 @@
         public int getMaxSpeed() {
             return maxSpeed;
         }
+       public boolean diagnostics(){
 
-        @Override
+       return true; }
+
+       @Override
         public String toString() {
             return "Бренд - " + brand + ". Модель - " + model + ". Максимальная скорость - " + maxSpeed;
         }

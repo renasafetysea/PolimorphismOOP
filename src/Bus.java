@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Bus extends Car implements Competitor {
 
 
@@ -56,6 +54,12 @@ public class Bus extends Car implements Competitor {
             System.out.println("Вместимость " + capacity.getStringCapacity());
         }
 
+    }
+
+    @Override
+    public boolean diagnostics() {
+        System.out.println("Автобус - " + getBrand() + getModel() + " в диагностике не требуется");
+        return true;
     }
 }
 
