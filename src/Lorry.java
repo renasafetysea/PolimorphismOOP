@@ -49,8 +49,19 @@ public class Lorry extends  Car implements Competitor{
     }
 
     @Override
+    public void fixTransport() {
+
+    }
+
+    @Override
     public boolean diagnostics() {
         return Math.random() > 0.75;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Грузовик " + getBrand() + getModel() + " починен.");
+
     }
 
     public Weight getWeight() {

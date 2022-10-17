@@ -1,3 +1,7 @@
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.Queue;
+
 import static Verification.Data.verification;
 public class Main {
 
@@ -66,7 +70,7 @@ public class Main {
         roma.refuel(sprinter);
         roma.stop(sprinter);
         System.out.println(roma);
-        Driver<Lorry> vania = new Driver<>("Ваня", 3, "C");
+        Driver<Lorry> vania = new Driver<Lorry>("Ваня", 3, "C");
         vania.competition(cab);
         Driver<PassengerCar> ura = new Driver<>("Юра", 10, "B");
         ura.competition(reno);
@@ -77,6 +81,36 @@ public class Main {
         cab.printInfo();
         System.out.println(verification("ivan", "123qwe", "123qwe"));
         System.out.println(verification("Ivan", "L0256dfg", "L0256dfh"));
+
+        List<Transport> transports = List.of(lada,bmw,reno,daewoo,sprinter,kursor,mezdogorodets,lionCity,bca,cab,cba,abc);
+
+        Sponsor lukoil =  new Sponsor("Lukoil",50000);
+        lada.addSponsor(lukoil);
+        Driver<Car> ivan = new Driver<Car>("Иван Н.", 5, "B");
+        lada.addDriver(ivan);
+
+        Mechanik<Car> vova = new Mechanik<Car>("Вова", " Коваль", "Абетка");
+        lada.addMechanik(vova);
+
+        for(Transport transport : transports){
+            printInfo(transport);
+        }
+    }
+
+    public static void printInfo(Transport transport){
+        System.out.println("Информация по автомобилю " + transport.getModel() + transport.getBrand());
+        System.out.println("Водители :");
+        for(Driver<?> driver : transport.getDrivers()){
+            System.out.println(driver.getName());
+        }
+        System.out.println("Спонсоры:");
+        for (Sponsor sponsor : transport.getSponsors()){
+            System.out.println(sponsor.getNameCompany());
+        }
+        System.out.println("Механики ");
+        for (Mechanik<?> mechanik: transport.getMechaniks()){
+            System.out.println(mechanik.surname + mechanik.name);
+        }
     }
 
     private static void service(Transport... transports) {

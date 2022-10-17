@@ -40,6 +40,16 @@ public class PassengerCar extends Car implements Competitor {
     }
 
     @Override
+    public void fixTransport() {
+
+    }
+    @Override
+    public void repair() {
+        System.out.println("Пассажирская машина  " + getBrand() + getModel() + " починена.");
+
+    }
+
+    @Override
     public boolean diagnostics() {
         return Math.random() > 0.7;
     }

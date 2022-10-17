@@ -1,7 +1,4 @@
 public class Bus extends Car implements Competitor {
-
-
-
     private Capacity capacity;
 
     public Bus(String brand, String model, int maxSpeed, Float engineVolume, Capacity capacity) {
@@ -53,6 +50,11 @@ public class Bus extends Car implements Competitor {
         } else {
             System.out.println("Вместимость " + capacity.getStringCapacity());
         }
+
+    }
+
+    @Override
+    public void fixTransport() {
 
     }
 

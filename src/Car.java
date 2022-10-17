@@ -1,5 +1,5 @@
 
-    public abstract class Car extends Transport {
+    public abstract class Car extends Transport implements Competitor {
         private Float engineVolume;
 
         public Car(String brand, String model,int maxSpeed, Float engineVolume ) {
@@ -27,12 +27,16 @@
             System.out.println(getModel() + "- Закончить движение!");
         }
 
+        @Override
+        public void repair() {
+            System.out.println("Машина " + getBrand() + getModel() + " починена.");
+        }
 
         @Override
         public String toString() {
             return super.toString() + ". Объем двигателя - " + String.format("%.1f", engineVolume);
         }
+}
 
 
-        public abstract boolean diagnostics();
-    }
+
